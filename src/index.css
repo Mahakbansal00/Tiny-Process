@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0a0a0a;
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: #111;
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.btn {
+  background: white;
+  color: black;
+  padding: 5px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+}
+
+.search {
+  margin-top: 20px;
+  padding: 10px;
+  width: 300px;
+  border-radius: 8px;
+  border: none;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  position: relative;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.slide {
+  background: #222;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.prev, .next {
+  background: #444;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #444;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background: #7c3aed;
+}
+
+.prev:hover, .next:hover {
+  background: #666;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+}

@@ -1,0 +1,279 @@
+body, html, #root, .app {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100%;
+  background-color: #121212;
+  color: #eee;
+}
+
+.app.dark-theme {
+  background-color: #121212;
+  color: #eee;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1f1f1f;
+  color: #eee;
+  position: relative;
+}
+
+.navbar .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.navbar .menu {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar .menu ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .menu ul li {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+
+.navbar .menu ul li.btn {
+  background-color: #7f5af0;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #eee;
+  cursor: pointer;
+}
+
+/* Responsive menu */
+@media (max-width: 768px) {
+  .navbar .menu {
+    display: none;
+    flex-direction: column;
+    background-color: #1f1f1f;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    border-radius: 0 0 0 8px;
+  }
+  .navbar .menu.open {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* Hero */
+.hero {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #bbb;
+}
+
+.hero .search {
+  padding: 0.75rem 1rem;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 4px;
+  border: none;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.hero .categories {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.hero .categories button {
+  background: none;
+  border: 1px solid #555;
+  color: #bbb;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero .categories button.active,
+.hero .categories button:hover {
+  background-color: #7f5af0;
+  border-color: #7f5af0;
+  color: white;
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.card {
+  background-color: #1f1f1f;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 10px rgba(127, 90, 240, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.card h3 {
+  margin: 0.5rem;
+  color: #eee;
+}
+
+.featured {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: #7f5af0;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #1f1f1f;
+  color: #bbb;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 1rem 0;
+}
+
+.footer-column h4 {
+  margin-bottom: 0.5rem;
+  color: #ddd;
+}
+
+.footer-links-list {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-links-list a {
+  color: #bbb;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links-list a:hover {
+  color: #7f5af0;
+}
+
+/* Slideshow */
+.slideshow {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(127, 90, 240, 0.5);
+}
+
+.slide {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  height: 400px;
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+
+.slide.active {
+  opacity: 1;
+  position: relative;
+}
+
+.slideshow-controls {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.slideshow-controls button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: #bbb;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slideshow-controls button.active,
+.slideshow-controls button:hover {
+  background-color: #7f5af0;
+}
+
+/* Hide the "Inspired by Framer" text in the footer */
+.footer  {
+  /* display: none !important; */
+}
